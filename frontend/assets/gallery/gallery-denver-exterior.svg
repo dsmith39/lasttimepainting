@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1100" role="img" aria-labelledby="title desc">
+  <title id="title">Sample exterior repaint project</title>
+  <desc id="desc">Illustrated exterior home repaint with siding, trim, shrubs, and ladders for a painting portfolio sample image.</desc>
+  <rect width="1600" height="1100" fill="#edf4f8"/>
+  <rect y="780" width="1600" height="320" fill="#88b56a"/>
+  <rect x="0" y="730" width="1600" height="60" fill="#b7c8a4"/>
+  <rect x="300" y="300" width="980" height="460" rx="18" fill="#f3e5d7"/>
+  <polygon points="240,360 790,120 1340,360" fill="#5f4a3f"/>
+  <rect x="360" y="360" width="860" height="340" fill="#d1b39a"/>
+  <rect x="710" y="500" width="160" height="260" fill="#8b5e3c"/>
+  <rect x="540" y="440" width="140" height="120" rx="8" fill="#c2d8ea" stroke="#fff" stroke-width="16"/>
+  <rect x="900" y="440" width="140" height="120" rx="8" fill="#c2d8ea" stroke="#fff" stroke-width="16"/>
+  <rect x="340" y="700" width="900" height="36" fill="#ffffff" opacity="0.95"/>
+  <rect x="1130" y="390" width="22" height="300" fill="#855b3a"/>
+  <rect x="1200" y="390" width="22" height="300" fill="#855b3a"/>
+  <rect x="1112" y="408" width="128" height="18" rx="9" fill="#855b3a"/>
+  <rect x="1090" y="540" width="160" height="18" rx="9" fill="#855b3a"/>
+  <circle cx="190" cy="190" r="70" fill="#ffd182"/>
+  <circle cx="250" cy="860" r="80" fill="#5f8b4a"/>
+  <circle cx="1340" cy="860" r="90" fill="#5f8b4a"/>
+</svg>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1060" role="img" aria-labelledby="title desc">
+  <title id="title">Crew discussion sample image</title>
+  <desc id="desc">Photo-style generated sample of a crew discussing a residential painting plan near ladders and materials.</desc>
+  <rect width="1600" height="1060" fill="#e9eef3"/>
+  <rect y="140" width="1600" height="620" fill="#efe3d4"/>
+  <rect y="760" width="1600" height="300" fill="#845d40"/>
+  <rect x="160" y="220" width="1280" height="480" rx="22" fill="#f8f6f3" stroke="#d7c9bb" stroke-width="14"/>
+  <rect x="220" y="300" width="500" height="320" rx="12" fill="#cadcea"/>
+  <rect x="790" y="300" width="560" height="20" rx="10" fill="#fff"/>
+  <rect x="790" y="385" width="560" height="20" rx="10" fill="#fff"/>
+  <rect x="790" y="470" width="560" height="20" rx="10" fill="#fff"/>
+  <rect x="790" y="555" width="560" height="20" rx="10" fill="#fff"/>
+  <rect x="1200" y="360" width="20" height="300" fill="#6c4a33"/>
+  <rect x="1265" y="360" width="20" height="300" fill="#6c4a33"/>
+  <rect x="1184" y="382" width="116" height="18" rx="9" fill="#6c4a33"/>
+  <rect x="1160" y="510" width="140" height="18" rx="9" fill="#6c4a33"/>
+  <circle cx="620" cy="860" r="70" fill="#343434"/>
+  <rect x="580" y="746" width="80" height="120" rx="20" fill="#cc6f43"/>
+  <circle cx="620" cy="710" r="40" fill="#d8a98d"/>
+  <circle cx="790" cy="860" r="70" fill="#343434"/>
+  <rect x="750" y="746" width="80" height="120" rx="20" fill="#4f7f64"/>
+  <circle cx="790" cy="710" r="40" fill="#d8a98d"/>
+</svg>

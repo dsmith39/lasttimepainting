@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1060" role="img" aria-labelledby="title desc">
+  <title id="title">Interior painting service sample image</title>
+  <desc id="desc">Photo-style generated interior service sample featuring rollers, masked trim, and freshly painted walls.</desc>
+  <rect width="1600" height="1060" fill="#e5edf2"/>
+  <rect y="120" width="1600" height="650" fill="#f1e6d8"/>
+  <rect y="770" width="1600" height="290" fill="#8a5f41"/>
+  <rect x="150" y="220" width="1300" height="460" rx="20" fill="#f9f7f4" stroke="#d5c6b8" stroke-width="14"/>
+  <rect x="220" y="300" width="500" height="300" rx="10" fill="#d5e4ef"/>
+  <rect x="780" y="300" width="560" height="20" rx="10" fill="#ffffff"/>
+  <rect x="780" y="390" width="560" height="20" rx="10" fill="#ffffff"/>
+  <rect x="780" y="480" width="560" height="20" rx="10" fill="#ffffff"/>
+  <rect x="780" y="570" width="560" height="20" rx="10" fill="#ffffff"/>
+  <rect x="420" y="700" width="26" height="170" fill="#b07b52"/>
+  <rect x="380" y="668" width="108" height="44" rx="14" fill="#c4622d"/>
+  <rect x="1020" y="700" width="26" height="170" fill="#b07b52"/>
+  <rect x="980" y="668" width="108" height="44" rx="14" fill="#c4622d"/>
+</svg>

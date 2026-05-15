@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1100" role="img" aria-labelledby="title desc">
+  <title id="title">Sample bathroom finish project</title>
+  <desc id="desc">Illustrated bathroom finish sample with vanity, mirror, tile wall, and fresh paint palette.</desc>
+  <rect width="1600" height="1100" fill="#f4efe8"/>
+  <rect y="760" width="1600" height="340" fill="#b89f88"/>
+  <rect x="0" y="0" width="1600" height="760" fill="#efe6da"/>
+  <rect x="130" y="170" width="500" height="420" rx="20" fill="#cde0e6" stroke="#ffffff" stroke-width="18"/>
+  <rect x="760" y="230" width="520" height="80" rx="16" fill="#f8f7f3"/>
+  <rect x="760" y="320" width="520" height="80" rx="16" fill="#f8f7f3"/>
+  <rect x="760" y="410" width="520" height="80" rx="16" fill="#f8f7f3"/>
+  <rect x="760" y="500" width="520" height="80" rx="16" fill="#f8f7f3"/>
+  <rect x="620" y="620" width="460" height="120" rx="18" fill="#a86b47"/>
+  <rect x="680" y="650" width="150" height="60" rx="12" fill="#f5f2ec"/>
+  <rect x="870" y="650" width="150" height="60" rx="12" fill="#f5f2ec"/>
+  <ellipse cx="800" cy="620" rx="140" ry="34" fill="#f7f6f2"/>
+  <circle cx="800" cy="120" r="38" fill="#d9a96f" opacity="0.7"/>
+  <rect x="780" y="120" width="40" height="120" fill="#d9a96f" opacity="0.7"/>
+</svg>

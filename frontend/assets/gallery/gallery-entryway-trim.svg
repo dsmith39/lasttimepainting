@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1100" role="img" aria-labelledby="title desc">
+  <title id="title">Sample entryway trim project</title>
+  <desc id="desc">Illustrated entryway trim and paint sample with doorway, staircase detail, and bright finish work.</desc>
+  <rect width="1600" height="1100" fill="#f6f1eb"/>
+  <rect width="1600" height="720" fill="#eadccf"/>
+  <rect y="720" width="1600" height="380" fill="#8f6543"/>
+  <rect x="190" y="210" width="420" height="510" rx="24" fill="#f7f4ef"/>
+  <rect x="270" y="300" width="260" height="420" rx="14" fill="#8b5e3c"/>
+  <circle cx="485" cy="520" r="14" fill="#d6c2ac"/>
+  <rect x="710" y="230" width="660" height="470" rx="18" fill="#f5efe8"/>
+  <rect x="760" y="290" width="560" height="24" rx="12" fill="#ffffff"/>
+  <rect x="760" y="400" width="560" height="24" rx="12" fill="#ffffff"/>
+  <rect x="760" y="510" width="560" height="24" rx="12" fill="#ffffff"/>
+  <rect x="760" y="620" width="560" height="24" rx="12" fill="#ffffff"/>
+  <polygon points="820,760 1400,760 1400,800 870,800" fill="#6d4c34"/>
+  <polygon points="870,800 1400,800 1400,840 920,840" fill="#7a563a"/>
+  <polygon points="920,840 1400,840 1400,880 970,880" fill="#866045"/>
+  <polygon points="970,880 1400,880 1400,920 1020,920" fill="#936a4d"/>
+</svg>

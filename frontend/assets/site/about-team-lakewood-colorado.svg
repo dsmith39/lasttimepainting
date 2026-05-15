@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1060" role="img" aria-labelledby="title desc">
+  <title id="title">Team planning project sample image</title>
+  <desc id="desc">Photo-style generated sample of a painting team reviewing plans in a partially remodeled room.</desc>
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f6f1e8"/>
+      <stop offset="100%" stop-color="#dfcfbb"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#8a6244"/>
+      <stop offset="100%" stop-color="#6d4b34"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1060" fill="#e5edf2"/>
+  <rect y="120" width="1600" height="650" fill="url(#g1)"/>
+  <rect y="770" width="1600" height="290" fill="url(#g2)"/>
+  <rect x="170" y="220" width="1240" height="450" rx="20" fill="#f8f6f2" stroke="#d4c5b8" stroke-width="14"/>
+  <rect x="260" y="300" width="380" height="300" rx="12" fill="#c5d8e7"/>
+  <rect x="700" y="300" width="620" height="22" rx="11" fill="#ffffff"/>
+  <rect x="700" y="390" width="620" height="22" rx="11" fill="#ffffff"/>
+  <rect x="700" y="480" width="620" height="22" rx="11" fill="#ffffff"/>
+  <circle cx="690" cy="860" r="72" fill="#303030"/>
+  <rect x="646" y="740" width="88" height="120" rx="22" fill="#cc6c3f"/>
+  <circle cx="690" cy="704" r="42" fill="#d8aa8d"/>
+  <circle cx="900" cy="860" r="72" fill="#303030"/>
+  <rect x="856" y="740" width="88" height="120" rx="22" fill="#49708f"/>
+  <circle cx="900" cy="704" r="42" fill="#d8aa8d"/>
+  <rect x="735" y="770" width="120" height="70" rx="10" fill="#efe3d4"/>
+</svg>

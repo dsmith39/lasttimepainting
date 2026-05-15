@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 1200" role="img" aria-labelledby="title desc">
+  <title id="title">Painting crew interior hero image</title>
+  <desc id="desc">Photo-style generated sample of a painting crew applying a fresh coat to a bright interior room.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e8f0f6"/>
+      <stop offset="100%" stop-color="#cfdde8"/>
+    </linearGradient>
+    <linearGradient id="room" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f5efe6"/>
+      <stop offset="100%" stop-color="#e4d4bf"/>
+    </linearGradient>
+    <linearGradient id="floor" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#8c6242"/>
+      <stop offset="100%" stop-color="#6e4d34"/>
+    </linearGradient>
+    <filter id="grain" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.04"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+  <rect width="1800" height="1200" fill="url(#bg)"/>
+  <rect x="0" y="120" width="1800" height="700" fill="url(#room)"/>
+  <rect x="0" y="820" width="1800" height="380" fill="url(#floor)"/>
+  <rect x="180" y="220" width="450" height="360" rx="20" fill="#f7f5f0" stroke="#d4c6b8" stroke-width="16"/>
+  <rect x="240" y="280" width="330" height="240" rx="10" fill="#c8dcea"/>
+  <rect x="760" y="280" width="850" height="22" rx="11" fill="#ffffff" opacity="0.9"/>
+  <rect x="760" y="390" width="850" height="22" rx="11" fill="#ffffff" opacity="0.9"/>
+  <rect x="760" y="500" width="850" height="22" rx="11" fill="#ffffff" opacity="0.9"/>
+  <rect x="760" y="610" width="850" height="22" rx="11" fill="#ffffff" opacity="0.9"/>
+  <rect x="1120" y="420" width="28" height="340" fill="#6e4d34"/>
+  <rect x="1210" y="420" width="28" height="340" fill="#6e4d34"/>
+  <rect x="1085" y="445" width="190" height="20" rx="10" fill="#6e4d34"/>
+  <rect x="1040" y="610" width="260" height="20" rx="10" fill="#6e4d34"/>
+  <ellipse cx="980" cy="930" rx="260" ry="80" fill="#d2b390"/>
+  <rect x="770" y="945" width="420" height="90" rx="14" fill="#f0e3d5" opacity="0.5"/>
+  <circle cx="410" cy="1020" r="92" fill="#2b2b2b"/>
+  <rect x="380" y="890" width="60" height="130" rx="20" fill="#cf6f3f"/>
+  <circle cx="410" cy="850" r="46" fill="#d3a58a"/>
+  <rect x="420" y="915" width="200" height="22" rx="11" fill="#cf6f3f"/>
+  <rect width="1800" height="1200" filter="url(#grain)" opacity="0.35"/>
+</svg>

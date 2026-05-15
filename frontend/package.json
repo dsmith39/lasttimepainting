@@ -1,0 +1,20 @@
+{
+  "name": "milehighwebstudio-frontend",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "npm run format:check && npm run lint",
+    "format:check": "prettier --check \"**/*.{html,css,js}\"",
+    "format": "prettier --write \"**/*.{html,css,js}\"",
+    "lint": "htmlhint \"**/*.html\" && stylelint \"**/*.css\" && eslint \"js/**/*.js\""
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.24.0",
+    "eslint": "^9.24.0",
+    "globals": "^16.0.0",
+    "htmlhint": "^1.7.1",
+    "prettier": "^3.5.3",
+    "stylelint": "^16.18.0",
+    "stylelint-config-standard": "^38.0.0"
+  }
+}
