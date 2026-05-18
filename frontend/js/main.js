@@ -198,10 +198,16 @@
       '  <figure class="lightbox-figure">' +
       '    <div class="lightbox-img-wrap">' +
       '      <img class="lightbox-img" src="" alt="" />' +
-      '      <button class="lightbox-prev" aria-label="Previous image">' + svgPrev + '</button>' +
-      '      <button class="lightbox-next" aria-label="Next image">' + svgNext + '</button>' +
-      '      <button class="lightbox-close" aria-label="Close image viewer">' + svgX + ' Close</button>' +
-      '    </div>' +
+      '      <button class="lightbox-prev" aria-label="Previous image">' +
+      svgPrev +
+      "</button>" +
+      '      <button class="lightbox-next" aria-label="Next image">' +
+      svgNext +
+      "</button>" +
+      '      <button class="lightbox-close" aria-label="Close image viewer">' +
+      svgX +
+      " Close</button>" +
+      "    </div>" +
       '    <figcaption class="lightbox-caption">' +
       '      <span class="lightbox-meta"></span>' +
       '      <h3 class="lightbox-title"></h3>' +
@@ -211,11 +217,11 @@
       '        <div class="lightbox-filter-row">' +
       '          <span class="lightbox-filter-label">Browse:</span>' +
       '          <div class="lightbox-filters" data-lightbox-filters></div>' +
-      '        </div>' +
-      '      </div>' +
-      '    </figcaption>' +
-      '  </figure>' +
-      '</div>';
+      "        </div>" +
+      "      </div>" +
+      "    </figcaption>" +
+      "  </figure>" +
+      "</div>";
     document.body.appendChild(lightbox);
 
     const lbImg = lightbox.querySelector(".lightbox-img");
@@ -235,8 +241,7 @@
       lbMeta.textContent = item.project.meta;
       lbTitle.textContent = item.project.title;
       lbDesc.textContent = item.project.description;
-      lbCounter.textContent =
-        lightboxIndex + 1 + " of " + lightboxItems.length;
+      lbCounter.textContent = lightboxIndex + 1 + " of " + lightboxItems.length;
       lightbox.hidden = false;
       document.body.style.overflow = "hidden";
       lightbox.querySelector(".lightbox-close").focus();
@@ -253,12 +258,16 @@
     lightbox
       .querySelector(".lightbox-close")
       .addEventListener("click", closeLightbox);
-    lightbox.querySelector(".lightbox-prev").addEventListener("click", function () {
-      showLightbox(lightboxIndex - 1);
-    });
-    lightbox.querySelector(".lightbox-next").addEventListener("click", function () {
-      showLightbox(lightboxIndex + 1);
-    });
+    lightbox
+      .querySelector(".lightbox-prev")
+      .addEventListener("click", function () {
+        showLightbox(lightboxIndex - 1);
+      });
+    lightbox
+      .querySelector(".lightbox-next")
+      .addEventListener("click", function () {
+        showLightbox(lightboxIndex + 1);
+      });
 
     document.addEventListener("keydown", function (e) {
       if (lightbox.hidden) return;
