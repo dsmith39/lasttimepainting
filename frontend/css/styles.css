@@ -72,6 +72,7 @@ body {
   position: relative;
   margin: 0;
   font-family: var(--font-body);
+  font-size: 1.06rem;
   color: var(--color-text);
   background:
     radial-gradient(
@@ -86,7 +87,7 @@ body {
       transparent 46%
     ),
     linear-gradient(180deg, #fff8f2 0%, #fff2e4 52%, #ffeede 100%);
-  line-height: 1.62;
+  line-height: 1.7;
   overflow-x: hidden;
 }
 
@@ -138,6 +139,8 @@ img {
 
 p {
   margin: 0;
+  font-size: 1.08rem;
+  line-height: 1.72;
   color: var(--color-muted);
 }
 
@@ -242,7 +245,7 @@ select {
   background: linear-gradient(90deg, #ffe8cf, #ffd8da);
   border: 1px solid rgba(200, 60, 40, 0.6);
   color: #81271f;
-  font-size: 0.84rem;
+  font-size: 0.94rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -333,7 +336,7 @@ select {
 }
 
 .brand-tagline {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: var(--color-muted);
 }
 
@@ -405,7 +408,7 @@ select {
 
 .header-contact .btn {
   padding: 0.45rem 1rem;
-  font-size: 0.9rem;
+  font-size: 1rem;
   white-space: nowrap;
   line-height: 1.1;
   flex-shrink: 0;
@@ -766,7 +769,7 @@ body[data-page="contact"] .hero-copy .headline-accent {
   flex-wrap: wrap;
   gap: var(--space-3);
   color: #473d35;
-  font-size: 0.93rem;
+  font-size: 1rem;
   font-weight: 600;
 }
 
@@ -994,7 +997,7 @@ body[data-page="contact"] .hero-copy .headline-accent {
   margin-top: var(--space-3);
   color: #4b4037;
   font-weight: 700;
-  font-size: 0.92rem;
+  font-size: 1rem;
 }
 
 .accordion {
@@ -1083,7 +1086,7 @@ body[data-page="contact"] .hero-copy .headline-accent {
 }
 
 .form-note {
-  font-size: 0.88rem;
+  font-size: 0.98rem;
 }
 
 /* =========================
@@ -1147,7 +1150,7 @@ body[data-page="contact"] .hero-copy .headline-accent {
   display: inline-block;
   margin-bottom: var(--space-2);
   color: var(--color-accent-dark);
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -1220,7 +1223,7 @@ body[data-page="contact"] .hero-copy .headline-accent {
 }
 
 .gallery-toolbar-label {
-  font-size: 0.78rem;
+  font-size: 0.88rem;
   font-weight: 800;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -1261,7 +1264,7 @@ body[data-page="contact"] .hero-copy .headline-accent {
 
 .gallery-stats {
   margin-top: var(--space-4);
-  font-size: 0.92rem;
+  font-size: 1rem;
   font-weight: 600;
   color: #4b4037;
 }
@@ -1307,7 +1310,7 @@ body[data-page="contact"] .hero-copy .headline-accent {
   display: inline-block;
   margin-top: var(--space-2);
   font-weight: 700;
-  font-size: 0.82rem;
+  font-size: 0.92rem;
   color: #5b4e44;
 }
 
@@ -1390,13 +1393,13 @@ body[data-page="contact"] .hero-copy .headline-accent {
 .site-footer li,
 .site-footer a {
   color: #dccfbe;
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
 
 .footer-bottom {
   border-top: 1px solid #41362f;
   padding: var(--space-4) 0;
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   color: #bcae9f;
 }
 
@@ -1556,7 +1559,7 @@ body[data-page="contact"] .hero-copy .headline-accent {
 .lightbox-meta {
   display: inline-block;
   color: var(--color-accent-dark);
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -1573,7 +1576,7 @@ body[data-page="contact"] .hero-copy .headline-accent {
 }
 
 .lightbox-counter {
-  font-size: 0.82rem;
+  font-size: 0.92rem;
   color: var(--color-muted);
   font-weight: 600;
 }
@@ -1595,7 +1598,7 @@ body[data-page="contact"] .hero-copy .headline-accent {
 }
 
 .lightbox-filter-label {
-  font-size: 0.78rem;
+  font-size: 0.88rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -1610,7 +1613,7 @@ body[data-page="contact"] .hero-copy .headline-accent {
 }
 
 .lightbox-filters .filter-chip {
-  font-size: 0.78rem;
+  font-size: 0.88rem;
   padding: 0.25rem 0.65rem;
 }
 
@@ -1623,7 +1626,7 @@ body[data-page="contact"] .hero-copy .headline-accent {
   color: #fff;
   border-radius: var(--radius-pill);
   padding: 0.4rem 0.85rem 0.4rem 0.65rem;
-  font-size: 0.92rem;
+  font-size: 1rem;
   font-weight: 700;
   letter-spacing: 0.02em;
   line-height: 1;
