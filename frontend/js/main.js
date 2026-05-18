@@ -442,7 +442,10 @@
       applyDefaultToolbarState();
 
       if (typeof compactToolbarQuery.addEventListener === "function") {
-        compactToolbarQuery.addEventListener("change", applyDefaultToolbarState);
+        compactToolbarQuery.addEventListener(
+          "change",
+          applyDefaultToolbarState,
+        );
       } else if (typeof compactToolbarQuery.addListener === "function") {
         compactToolbarQuery.addListener(applyDefaultToolbarState);
       }
