@@ -77,6 +77,14 @@
     });
   }
 
+  function setupContactFormRedirect() {
+    const redirectInput = document.querySelector("[data-redirect-success]");
+    if (!redirectInput) return;
+
+    const origin = window.location.origin;
+    redirectInput.value = origin + "/form-success.html";
+  }
+
   function setupProjectGallery() {
     const galleryEl = document.querySelector("[data-project-gallery]");
     const toolbarEl = document.querySelector("[data-gallery-toolbar]");
@@ -480,6 +488,7 @@
   setupAccordions();
   setupRevealAnimations();
   setupProjectGallery();
+  setupContactFormRedirect();
   setActiveNav();
 
   window.addEventListener("scroll", handleHeaderScroll, { passive: true });
