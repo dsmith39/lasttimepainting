@@ -240,6 +240,7 @@ select {
   border-radius: var(--radius-pill);
   padding: 0.35rem 0.75rem;
   background: linear-gradient(90deg, #ffe8cf, #ffd8da);
+  border: 1px solid rgba(200, 60, 40, 0.6);
   color: #81271f;
   font-size: 0.84rem;
   font-weight: 700;
@@ -394,12 +395,12 @@ select {
   white-space: nowrap;
   padding: 0.42rem 0.75rem;
   border-radius: var(--radius-pill);
-  border: 1px solid #e2c2b8;
+  border: 1px solid var(--paint-orange);
   background: linear-gradient(180deg, #fffdfa, #ffeedf);
 }
 
 .phone-link:hover {
-  border-color: #bf8c68;
+  border-color: var(--paint-red);
 }
 
 .header-contact .btn {
@@ -412,7 +413,7 @@ select {
 
 .menu-toggle {
   display: none;
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--paint-orange);
   background: var(--color-surface);
   width: 44px;
   height: 44px;
@@ -520,6 +521,7 @@ select {
     #ff8740
   );
   color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.45);
   box-shadow: 0 8px 24px rgba(239, 63, 63, 0.34);
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.18);
 }
@@ -532,13 +534,13 @@ select {
 
 .btn-secondary {
   background: linear-gradient(180deg, #ffffff, #fff5e8);
-  border: 1.5px solid #e4c6b2;
+  border: 1px solid var(--paint-orange);
   color: #2c2218;
   box-shadow: 0 2px 8px rgba(31, 26, 22, 0.07);
 }
 
 .btn-secondary:hover {
-  border-color: #a8866a;
+  border-color: var(--paint-red);
   transform: translateY(-3px);
   box-shadow: 0 8px 22px rgba(31, 26, 22, 0.14);
 }
@@ -609,8 +611,39 @@ select {
     rgba(255, 255, 255, 0.88),
     rgba(255, 247, 239, 0.56)
   );
-  box-shadow: inset 0 0 0 1px rgba(236, 201, 184, 0.5);
+  border: 1px solid transparent;
+  border-top-width: 0;
+  border-image: linear-gradient(
+    90deg,
+    var(--paint-orange),
+    var(--paint-red) 33%,
+    var(--paint-yellow) 66%,
+    var(--paint-blue)
+  ) 1;
   z-index: -1;
+}
+
+.hero-rainbow-top {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: min(1200px, 94%);
+  height: 4px;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    var(--paint-orange),
+    var(--paint-red) 20%,
+    var(--paint-yellow) 40%,
+    var(--paint-blue) 60%,
+    var(--paint-teal) 80%,
+    var(--paint-orange)
+  );
+  background-size: 200% 100%;
+  animation: rainbow-slide 5s linear infinite;
+  opacity: 0.92;
 }
 
 .hero::after {
@@ -739,14 +772,15 @@ body[data-page="contact"] .hero-copy .headline-accent {
 
 .hero-notes span {
   border-radius: var(--radius-pill);
-  border: 1px solid #e8c9c5;
+  border: 1px solid rgba(240, 90, 40, 0.45);
   background: rgba(255, 255, 255, 0.82);
   padding: 0.35rem 0.68rem;
 }
 
 .hero-card {
   background: linear-gradient(165deg, #fffefc, #fff5e8);
-  border: 1px solid #e7cdc4;
+  border: 1px solid transparent;
+  border-image: linear-gradient(135deg, var(--paint-orange), var(--paint-yellow) 50%, var(--paint-blue)) 1;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-md);
   overflow: hidden;
@@ -786,7 +820,9 @@ body[data-page="contact"] .hero-copy .headline-accent {
   position: relative;
   isolation: isolate;
   background: linear-gradient(170deg, #fff 0%, #fdf9f3 60%, #f9f4eb 100%);
-  border: 1px solid #e3c9bf;
+  border: 1px solid transparent;
+  border-top-width: 0;
+  border-image: linear-gradient(135deg, var(--paint-orange), var(--paint-red) 33%, var(--paint-yellow) 66%, var(--paint-blue)) 1;
   border-radius: var(--radius-lg);
   padding: var(--space-5);
   box-shadow: var(--shadow-sm);
@@ -806,33 +842,15 @@ body[data-page="contact"] .hero-copy .headline-accent {
   background: linear-gradient(
     90deg,
     var(--paint-orange),
-    var(--paint-red) 36%,
-    var(--paint-yellow) 66%,
-    var(--paint-blue)
+    var(--paint-red) 20%,
+    var(--paint-yellow) 40%,
+    var(--paint-blue) 60%,
+    var(--paint-teal) 80%,
+    var(--paint-orange)
   );
-  opacity: 0.85;
-}
-
-.grid-3 .card:nth-child(2)::before,
-.grid-4 .card:nth-child(2)::before,
-.grid-2 .card:nth-child(2)::before {
-  background: linear-gradient(
-    90deg,
-    var(--paint-blue),
-    var(--paint-teal) 44%,
-    var(--paint-yellow)
-  );
-}
-
-.grid-3 .card:nth-child(3)::before,
-.grid-4 .card:nth-child(3)::before,
-.grid-2 .card:nth-child(3)::before {
-  background: linear-gradient(
-    90deg,
-    var(--paint-red),
-    var(--paint-orange) 42%,
-    var(--paint-yellow)
-  );
+  background-size: 200% 100%;
+  opacity: 0.92;
+  animation: rainbow-slide 5s linear infinite;
 }
 
 .card:hover {
@@ -857,6 +875,8 @@ body[data-page="contact"] .hero-copy .headline-accent {
   place-items: center;
   border-radius: 0;
   background: linear-gradient(145deg, #ffe0c8, #ffd5d8);
+  border: 1px solid transparent;
+  border-image: linear-gradient(135deg, var(--paint-red), var(--paint-orange)) 1;
   color: #8f241c;
   font-weight: 800;
   margin-bottom: var(--space-3);
@@ -875,8 +895,8 @@ body[data-page="contact"] .hero-copy .headline-accent {
       transparent 34%
     ),
     linear-gradient(180deg, #fff9f2, #ffeede);
-  border-top: 1px solid #e3c6b8;
-  border-bottom: 1px solid #e3c6b8;
+  border-top: 1px solid var(--paint-orange);
+  border-bottom: 1px solid var(--paint-teal);
 }
 
 .trust-list {
@@ -904,7 +924,8 @@ body[data-page="contact"] .hero-copy .headline-accent {
 .image-card {
   overflow: hidden;
   border-radius: var(--radius-md);
-  border: 1px solid var(--color-border);
+  border: 1px solid transparent;
+  border-image: linear-gradient(135deg, var(--paint-orange), var(--paint-red)) 1;
 }
 
 .image-card img {
@@ -941,7 +962,7 @@ body[data-page="contact"] .hero-copy .headline-accent {
 .location-pill {
   border-radius: var(--radius-pill);
   background: var(--color-surface-alt);
-  border: 1px solid var(--color-border);
+  border: 1px solid rgba(0, 168, 168, 0.6);
   font-weight: 600;
   padding: 0.4rem 0.8rem;
   color: #42372f;
@@ -983,7 +1004,8 @@ body[data-page="contact"] .hero-copy .headline-accent {
 
 .accordion-item {
   border-radius: var(--radius-md);
-  border: 1px solid var(--color-border);
+  border: 1px solid transparent;
+  border-image: linear-gradient(90deg, var(--paint-teal), var(--paint-blue) 60%, var(--paint-teal)) 1;
   background: var(--color-surface);
   overflow: hidden;
 }
@@ -1045,7 +1067,7 @@ body[data-page="contact"] .hero-copy .headline-accent {
 .field textarea,
 .field select {
   width: 100%;
-  border: 1px solid var(--color-border);
+  border: 1px solid rgba(240, 90, 40, 0.38);
   border-radius: 0;
   padding: 0.68rem 0.82rem;
   background: #fff;
@@ -1078,7 +1100,8 @@ body[data-page="contact"] .hero-copy .headline-accent {
   overflow: hidden;
   border-radius: var(--radius-md);
   background: var(--color-surface);
-  border: 1px solid var(--color-border);
+  border: 1px solid transparent;
+  border-image: linear-gradient(135deg, var(--paint-blue), var(--paint-teal) 50%, var(--paint-yellow)) 1;
   box-shadow: var(--shadow-sm);
   transition:
     transform var(--transition-slow),
@@ -1176,11 +1199,12 @@ body[data-page="contact"] .hero-copy .headline-accent {
   position: sticky;
   top: calc(var(--header-height) + var(--space-4));
   background: linear-gradient(170deg, rgba(255, 255, 255, 0.96), #fff3e6);
-  border: 1px solid #e5cabc;
   box-shadow: 0 16px 32px rgba(37, 22, 28, 0.14);
   border-radius: var(--radius-lg);
   padding: var(--space-4);
   backdrop-filter: blur(4px);
+  border: 1px solid transparent;
+  border-image: linear-gradient(135deg, var(--paint-orange), var(--paint-blue)) 1;
 }
 
 .gallery-toolbar-toggle {
@@ -1209,7 +1233,7 @@ body[data-page="contact"] .hero-copy .headline-accent {
   display: grid;
   place-items: center;
   border-radius: 999px;
-  border: 1px solid #d8b8a6;
+  border: 1px solid var(--paint-orange);
   background: #fff;
   color: #7a2f24;
   font-size: 1rem;
@@ -1244,7 +1268,7 @@ body[data-page="contact"] .hero-copy .headline-accent {
 
 .filter-chip {
   border-radius: var(--radius-pill);
-  border: 1px solid var(--color-border);
+  border: 1px solid rgba(43, 127, 255, 0.5);
   background: #fff;
   padding: 0.4rem 0.9rem;
   font-weight: 600;
@@ -1257,12 +1281,12 @@ body[data-page="contact"] .hero-copy .headline-accent {
 }
 
 .filter-chip:hover {
-  border-color: #c7a083;
+  border-color: var(--paint-orange);
   background: #fbf1e8;
 }
 
 .filter-chip.active {
-  border-color: #ef5b31;
+  border-color: var(--paint-red);
   background: linear-gradient(140deg, #ffe8d5, #ffd9db);
   color: #6d221c;
 }
@@ -1298,7 +1322,8 @@ body[data-page="contact"] .hero-copy .headline-accent {
   padding: var(--space-7);
   box-shadow: 0 32px 72px rgba(31, 26, 22, 0.4);
   overflow: hidden;
-  border: 1px solid rgba(180, 130, 90, 0.2);
+  border: 1px solid transparent;
+  border-image: linear-gradient(130deg, rgba(255, 212, 71, 0.85), rgba(255, 106, 42, 0.75), rgba(43, 127, 255, 0.7)) 1;
 }
 
 .cta-banner::before {
@@ -1444,6 +1469,16 @@ body[data-page="contact"] .hero-copy .headline-accent {
 
   50% {
     transform: translate(16px, -14px) rotate(8deg);
+  }
+}
+
+@keyframes rainbow-slide {
+  from {
+    background-position: 0% 0;
+  }
+
+  to {
+    background-position: 200% 0;
   }
 }
 
