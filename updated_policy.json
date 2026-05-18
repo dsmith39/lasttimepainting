@@ -1,0 +1,40 @@
+﻿{
+    "Version":  "2012-10-17",
+    "Statement":  [
+                      {
+                          "Effect":  "Allow",
+                          "Resource":  [
+                                           "arn:aws:s3:::milehighwebstudio-static-471112617315-us-east-1-an",
+                                           "arn:aws:s3:::milehighwebstudio-static-471112617315-us-east-1-an/*",
+                                           "arn:aws:s3:::milehighwebstudio-preview-471112617315-us-east-1",
+                                           "arn:aws:s3:::milehighwebstudio-preview-471112617315-us-east-1/*",
+                                           "arn:aws:s3:::last-time-painting-website-main",
+                                           "arn:aws:s3:::last-time-painting-website-main/*"
+                                       ],
+                          "Action":  [
+                                         "s3:PutObject",
+                                         "s3:PutObjectAcl",
+                                         "s3:DeleteObject",
+                                         "s3:ListBucket"
+                                     ]
+                      },
+                      {
+                          "Effect":  "Allow",
+                          "Resource":  [
+                                           "arn:aws:cloudfront::471112617315:distribution/E17Y835CTAGZI",
+                                           "arn:aws:cloudfront::471112617315:distribution/E3VO0N6B7ZU63B"
+                                       ],
+                          "Action":  "cloudfront:CreateInvalidation"
+                      },
+                      {
+                          "Effect":  "Allow",
+                          "Resource":  "*",
+                          "Action":  "cloudfront:ListDistributions"
+                      },
+                      {
+                          "Effect":  "Allow",
+                          "Resource":  "arn:aws:cloudformation:us-east-1:471112617315:stack/milehighwebstudio-preview-infra/*",
+                          "Action":  "cloudformation:DescribeStacks"
+                      }
+                  ]
+}

@@ -1,0 +1,30 @@
+name: Deploy Frontend to S3
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "frontend/**"
+      - ".github/workflows/deploy-frontend-to-s3.yml"
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::471112617315:role/Github-Actions
+          role-session-name: github-actions-s3-deploy
+          aws-region: us-east-1
+
+      - name: Upload frontend to S3
+        run: aws s3 sync frontend s3://last-time-painting-website-main --delete
