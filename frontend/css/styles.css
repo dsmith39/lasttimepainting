@@ -955,7 +955,17 @@ body[data-page="contact"] .hero-copy .headline-accent {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-2);
+}
+
+.gallery-toolbar {
   margin-bottom: var(--space-5);
+}
+
+.gallery-stats {
+  margin-top: var(--space-3);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #4b4037;
 }
 
 .filter-chip {
@@ -965,6 +975,16 @@ body[data-page="contact"] .hero-copy .headline-accent {
   padding: 0.4rem 0.9rem;
   font-weight: 600;
   color: #4f4339;
+  cursor: pointer;
+  transition:
+    background-color var(--transition-base),
+    border-color var(--transition-base),
+    color var(--transition-base);
+}
+
+.filter-chip:hover {
+  border-color: #c7a083;
+  background: #fbf1e8;
 }
 
 .filter-chip.active {
@@ -1080,11 +1100,16 @@ body[data-page="contact"] .hero-copy .headline-accent {
    Reveal Animations
 ========================= */
 .reveal {
-  opacity: 0;
-  transform: translateY(16px);
+  opacity: 1;
+  transform: translateY(0);
   transition:
     opacity 600ms ease,
     transform 600ms ease;
+}
+
+.js-enabled .reveal {
+  opacity: 0;
+  transform: translateY(16px);
 }
 
 .grid-2 .reveal:nth-child(2),
