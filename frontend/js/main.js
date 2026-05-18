@@ -85,6 +85,48 @@
     redirectInput.value = origin + "/form-success.html";
   }
 
+  function setupContactFormSubmission() {
+    const form = document.querySelector("[data-web3forms-form]");
+    if (!form) return;
+
+    form.addEventListener("submit", async function (event) {
+      event.preventDefault();
+
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const defaultText = submitBtn ? submitBtn.textContent : "";
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Submitting...";
+      }
+
+      try {
+        const formData = new FormData(form);
+        const response = await fetch(form.action, {
+          method: "POST",
+          body: formData,
+        });
+        const result = await response.json();
+
+        if (response.ok && result && result.success) {
+          window.location.assign(window.location.origin + "/form-success.html");
+          return;
+        }
+
+        throw new Error("Submission failed");
+      } catch (_error) {
+        window.alert(
+          "Your form could not be submitted right now. Please try again or call (720) 244-1785.",
+        );
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = defaultText;
+        }
+      }
+    });
+  }
+
   function setupProjectGallery() {
     const galleryEl = document.querySelector("[data-project-gallery]");
     const toolbarEl = document.querySelector("[data-gallery-toolbar]");
@@ -489,6 +531,7 @@
   setupRevealAnimations();
   setupProjectGallery();
   setupContactFormRedirect();
+  setupContactFormSubmission();
   setActiveNav();
 
   window.addEventListener("scroll", handleHeaderScroll, { passive: true });
