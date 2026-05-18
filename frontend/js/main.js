@@ -176,6 +176,97 @@
 
     let activeFilter = "all";
 
+    // Lightbox
+    let lightboxItems = [];
+    let lightboxIndex = 0;
+
+    const lightbox = document.createElement("div");
+    lightbox.className = "lightbox";
+    lightbox.setAttribute("role", "dialog");
+    lightbox.setAttribute("aria-modal", "true");
+    lightbox.setAttribute("aria-label", "Image viewer");
+    lightbox.hidden = true;
+    const svgPrev =
+      '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>';
+    const svgNext =
+      '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>';
+    const svgX =
+      '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>';
+    lightbox.innerHTML =
+      '<div class="lightbox-backdrop"></div>' +
+      '<div class="lightbox-panel">' +
+      '  <figure class="lightbox-figure">' +
+      '    <div class="lightbox-img-wrap">' +
+      '      <img class="lightbox-img" src="" alt="" />' +
+      '      <button class="lightbox-prev" aria-label="Previous image">' + svgPrev + '</button>' +
+      '      <button class="lightbox-next" aria-label="Next image">' + svgNext + '</button>' +
+      '      <button class="lightbox-close" aria-label="Close image viewer">' + svgX + ' Close</button>' +
+      '    </div>' +
+      '    <figcaption class="lightbox-caption">' +
+      '      <span class="lightbox-meta"></span>' +
+      '      <h3 class="lightbox-title"></h3>' +
+      '      <p class="lightbox-desc"></p>' +
+      '      <div class="lightbox-footer">' +
+      '        <span class="lightbox-counter"></span>' +
+      '        <div class="lightbox-filter-row">' +
+      '          <span class="lightbox-filter-label">Browse:</span>' +
+      '          <div class="lightbox-filters" data-lightbox-filters></div>' +
+      '        </div>' +
+      '      </div>' +
+      '    </figcaption>' +
+      '  </figure>' +
+      '</div>';
+    document.body.appendChild(lightbox);
+
+    const lbImg = lightbox.querySelector(".lightbox-img");
+    const lbMeta = lightbox.querySelector(".lightbox-meta");
+    const lbTitle = lightbox.querySelector(".lightbox-title");
+    const lbDesc = lightbox.querySelector(".lightbox-desc");
+    const lbCounter = lightbox.querySelector(".lightbox-counter");
+    const lbFiltersEl = lightbox.querySelector("[data-lightbox-filters]");
+
+    function showLightbox(index) {
+      lightboxIndex =
+        ((index % lightboxItems.length) + lightboxItems.length) %
+        lightboxItems.length;
+      const item = lightboxItems[lightboxIndex];
+      lbImg.src = item.src.replace(/%20/g, " ");
+      lbImg.alt = item.project.label + " project photo";
+      lbMeta.textContent = item.project.meta;
+      lbTitle.textContent = item.project.title;
+      lbDesc.textContent = item.project.description;
+      lbCounter.textContent =
+        lightboxIndex + 1 + " of " + lightboxItems.length;
+      lightbox.hidden = false;
+      document.body.style.overflow = "hidden";
+      lightbox.querySelector(".lightbox-close").focus();
+    }
+
+    function closeLightbox() {
+      lightbox.hidden = true;
+      document.body.style.overflow = "";
+    }
+
+    lightbox
+      .querySelector(".lightbox-backdrop")
+      .addEventListener("click", closeLightbox);
+    lightbox
+      .querySelector(".lightbox-close")
+      .addEventListener("click", closeLightbox);
+    lightbox.querySelector(".lightbox-prev").addEventListener("click", function () {
+      showLightbox(lightboxIndex - 1);
+    });
+    lightbox.querySelector(".lightbox-next").addEventListener("click", function () {
+      showLightbox(lightboxIndex + 1);
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (lightbox.hidden) return;
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowLeft") showLightbox(lightboxIndex - 1);
+      if (e.key === "ArrowRight") showLightbox(lightboxIndex + 1);
+    });
+
     function createFilterButton(id, label, count) {
       const button = document.createElement("button");
       button.type = "button";
@@ -225,8 +316,10 @@
         activeProjects.length +
         " project folders.";
 
+      lightboxItems = visibleItems;
+
       galleryEl.innerHTML = "";
-      visibleItems.forEach(function (item) {
+      visibleItems.forEach(function (item, index) {
         seenByProject[item.project.id] =
           (seenByProject[item.project.id] || 0) + 1;
         const photoNumber = seenByProject[item.project.id];
@@ -235,7 +328,8 @@
         const figure = document.createElement("figure");
         figure.className = "gallery-item";
 
-        const imageWrap = document.createElement("div");
+        const imageWrap = document.createElement("button");
+        imageWrap.type = "button";
         imageWrap.className = "image-card";
 
         const img = document.createElement("img");
@@ -252,6 +346,10 @@
           photoNumber +
           " of " +
           projectTotal;
+        imageWrap.setAttribute("aria-label", "View full image: " + img.alt);
+        imageWrap.addEventListener("click", function () {
+          showLightbox(index);
+        });
         imageWrap.appendChild(img);
 
         const figcaption = document.createElement("figcaption");
@@ -281,20 +379,42 @@
         galleryEl.appendChild(figure);
       });
 
-      filtersEl.querySelectorAll(".filter-chip").forEach(function (chip) {
-        const isActive = chip.getAttribute("data-filter") === activeFilter;
-        chip.classList.toggle("active", isActive);
-        chip.setAttribute("aria-pressed", String(isActive));
+      [filtersEl, lbFiltersEl].forEach(function (container) {
+        container.querySelectorAll(".filter-chip").forEach(function (chip) {
+          const isActive = chip.getAttribute("data-filter") === activeFilter;
+          chip.classList.toggle("active", isActive);
+          chip.setAttribute("aria-pressed", String(isActive));
+        });
+      });
+    }
+
+    function renderLightboxFilters() {
+      lbFiltersEl.innerHTML = "";
+      const allBtn = createFilterButton("all", "All", items.length);
+      lbFiltersEl.appendChild(allBtn);
+      activeProjects.forEach(function (project) {
+        lbFiltersEl.appendChild(
+          createFilterButton(project.id, project.label, counts[project.id]),
+        );
       });
     }
 
     renderFilters();
+    renderLightboxFilters();
 
     filtersEl.addEventListener("click", function (event) {
       const chip = event.target.closest(".filter-chip");
       if (!chip) return;
       activeFilter = chip.getAttribute("data-filter") || "all";
       renderGallery();
+    });
+
+    lbFiltersEl.addEventListener("click", function (event) {
+      const chip = event.target.closest(".filter-chip");
+      if (!chip) return;
+      activeFilter = chip.getAttribute("data-filter") || "all";
+      renderGallery();
+      showLightbox(0);
     });
 
     renderGallery();

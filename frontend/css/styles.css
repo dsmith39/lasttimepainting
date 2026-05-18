@@ -1373,6 +1373,220 @@ body[data-page="contact"] .hero-copy .headline-accent {
 }
 
 /* =========================
+   Lightbox
+========================= */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox[hidden] {
+  display: none;
+}
+
+.lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 10, 14, 0.88);
+  backdrop-filter: blur(6px);
+}
+
+.lightbox-panel {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: min(92vw, 1000px);
+  max-height: 92dvh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.lightbox-figure {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  width: 100%;
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.lightbox-img-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1a1015;
+  max-height: 65dvh;
+  overflow: hidden;
+}
+
+.lightbox-img {
+  width: 100%;
+  height: auto;
+  max-height: 65dvh;
+  object-fit: contain;
+  display: block;
+}
+
+.lightbox-caption {
+  padding: var(--space-4) var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.lightbox-meta {
+  display: inline-block;
+  color: var(--color-accent-dark);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.lightbox-title {
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  margin: 0;
+}
+
+.lightbox-desc {
+  color: var(--color-muted);
+  margin: 0;
+}
+
+.lightbox-counter {
+  font-size: 0.82rem;
+  color: var(--color-muted);
+  font-weight: 600;
+}
+
+.lightbox-footer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--color-border);
+  margin-top: var(--space-1);
+}
+
+.lightbox-filter-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.lightbox-filter-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-muted);
+  white-space: nowrap;
+}
+
+.lightbox-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.lightbox-filters .filter-chip {
+  font-size: 0.78rem;
+  padding: 0.25rem 0.65rem;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  background: rgba(20, 10, 14, 0.72);
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  color: #fff;
+  border-radius: var(--radius-pill);
+  padding: 0.4rem 0.85rem 0.4rem 0.65rem;
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  backdrop-filter: blur(4px);
+  transition:
+    background-color var(--transition-base),
+    border-color var(--transition-base);
+  z-index: 3;
+}
+
+.lightbox-close:hover,
+.lightbox-close:focus-visible {
+  background: rgba(20, 10, 14, 0.92);
+  border-color: rgba(255, 255, 255, 0.7);
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 2px;
+}
+
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(20, 10, 14, 0.6);
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  border-radius: var(--radius-pill);
+  width: 3.2rem;
+  height: 3.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+  transition:
+    background-color var(--transition-base),
+    transform var(--transition-base);
+  z-index: 3;
+}
+
+.lightbox-prev {
+  left: var(--space-3);
+}
+
+.lightbox-next {
+  right: var(--space-3);
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover,
+.lightbox-prev:focus-visible,
+.lightbox-next:focus-visible {
+  background: rgba(20, 10, 14, 0.88);
+  border-color: rgba(255, 255, 255, 0.6);
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 2px;
+}
+
+.gallery-item .image-card {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+/* =========================
    Responsive
 ========================= */
 @media (max-width: 1024px) {
@@ -1469,6 +1683,17 @@ body[data-page="contact"] .hero-copy .headline-accent {
 
   .image-card img {
     height: 200px;
+  }
+
+  .lightbox-panel {
+    max-height: 96dvh;
+  }
+
+  .lightbox-prev,
+  .lightbox-next {
+    width: 2.6rem;
+    height: 2.6rem;
+    font-size: 2rem;
   }
 
   .about-hero-image img {
