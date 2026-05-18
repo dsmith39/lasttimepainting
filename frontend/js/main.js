@@ -155,10 +155,17 @@
     }
 
     const items = allImages
-      .map(function (src) {
+      .map(function (imageData) {
+        // Handle both old string format and new object format
+        const src = typeof imageData === 'string' ? imageData : imageData.src;
         const project = findProject(src);
         if (!project) return null;
-        return { src: src, project: project };
+        return { 
+          src: src, 
+          project: project,
+          alt: imageData.alt || (project.label + ' project photo'),
+          description: imageData.description || project.description
+        };
       })
       .filter(Boolean)
       .sort(function (a, b) {
@@ -237,10 +244,9 @@
         lightboxItems.length;
       const item = lightboxItems[lightboxIndex];
       lbImg.src = item.src.replace(/%20/g, " ");
-      lbImg.alt = item.project.label + " project photo";
+      lbImg.alt = item.alt;
       lbMeta.textContent = item.project.meta;
       lbTitle.textContent = item.project.title;
-      lbDesc.textContent = item.project.description;
       lbCounter.textContent = lightboxIndex + 1 + " of " + lightboxItems.length;
       lightbox.hidden = false;
       document.body.style.overflow = "hidden";
@@ -349,12 +355,7 @@
           img.fetchPriority = "high";
         }
         img.decoding = "async";
-        img.alt =
-          item.project.label +
-          " project photo " +
-          photoNumber +
-          " of " +
-          projectTotal;
+        img.alt = item.alt;
         imageWrap.setAttribute("aria-label", "View full image: " + img.alt);
         imageWrap.addEventListener("click", function () {
           showLightbox(index);
@@ -377,11 +378,8 @@
           projectTotal;
 
         const description = document.createElement("p");
-        description.textContent = item.project.description;
-
         figcaption.appendChild(meta);
         figcaption.appendChild(title);
-        figcaption.appendChild(description);
 
         figure.appendChild(imageWrap);
         figure.appendChild(figcaption);
