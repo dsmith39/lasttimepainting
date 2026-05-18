@@ -617,12 +617,13 @@ select {
   border: 1px solid transparent;
   border-top-width: 0;
   border-image: linear-gradient(
-    90deg,
-    var(--paint-orange),
-    var(--paint-red) 33%,
-    var(--paint-yellow) 66%,
-    var(--paint-blue)
-  ) 1;
+      90deg,
+      var(--paint-orange),
+      var(--paint-red) 33%,
+      var(--paint-yellow) 66%,
+      var(--paint-blue)
+    )
+    1;
   z-index: -1;
 }
 
@@ -783,7 +784,13 @@ body[data-page="contact"] .hero-copy .headline-accent {
 .hero-card {
   background: linear-gradient(165deg, #fffefc, #fff5e8);
   border: 1px solid transparent;
-  border-image: linear-gradient(135deg, var(--paint-orange), var(--paint-yellow) 50%, var(--paint-blue)) 1;
+  border-image: linear-gradient(
+      135deg,
+      var(--paint-orange),
+      var(--paint-yellow) 50%,
+      var(--paint-blue)
+    )
+    1;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-md);
   overflow: hidden;
@@ -825,7 +832,14 @@ body[data-page="contact"] .hero-copy .headline-accent {
   background: linear-gradient(170deg, #fff 0%, #fdf9f3 60%, #f9f4eb 100%);
   border: 1px solid transparent;
   border-top-width: 0;
-  border-image: linear-gradient(135deg, var(--paint-orange), var(--paint-red) 33%, var(--paint-yellow) 66%, var(--paint-blue)) 1;
+  border-image: linear-gradient(
+      135deg,
+      var(--paint-orange),
+      var(--paint-red) 33%,
+      var(--paint-yellow) 66%,
+      var(--paint-blue)
+    )
+    1;
   border-radius: var(--radius-lg);
   padding: var(--space-5);
   box-shadow: var(--shadow-sm);
@@ -1008,7 +1022,13 @@ body[data-page="contact"] .hero-copy .headline-accent {
 .accordion-item {
   border-radius: var(--radius-md);
   border: 1px solid transparent;
-  border-image: linear-gradient(90deg, var(--paint-teal), var(--paint-blue) 60%, var(--paint-teal)) 1;
+  border-image: linear-gradient(
+      90deg,
+      var(--paint-teal),
+      var(--paint-blue) 60%,
+      var(--paint-teal)
+    )
+    1;
   background: var(--color-surface);
   overflow: hidden;
 }
@@ -1104,7 +1124,13 @@ body[data-page="contact"] .hero-copy .headline-accent {
   border-radius: var(--radius-md);
   background: var(--color-surface);
   border: 1px solid transparent;
-  border-image: linear-gradient(135deg, var(--paint-blue), var(--paint-teal) 50%, var(--paint-yellow)) 1;
+  border-image: linear-gradient(
+      135deg,
+      var(--paint-blue),
+      var(--paint-teal) 50%,
+      var(--paint-yellow)
+    )
+    1;
   box-shadow: var(--shadow-sm);
   transition:
     transform var(--transition-slow),
@@ -1207,7 +1233,8 @@ body[data-page="contact"] .hero-copy .headline-accent {
   padding: var(--space-4);
   backdrop-filter: blur(4px);
   border: 1px solid transparent;
-  border-image: linear-gradient(135deg, var(--paint-orange), var(--paint-blue)) 1;
+  border-image: linear-gradient(135deg, var(--paint-orange), var(--paint-blue))
+    1;
 }
 
 .gallery-toolbar-toggle {
@@ -1326,7 +1353,13 @@ body[data-page="contact"] .hero-copy .headline-accent {
   box-shadow: 0 32px 72px rgba(31, 26, 22, 0.4);
   overflow: hidden;
   border: 1px solid transparent;
-  border-image: linear-gradient(130deg, rgba(255, 212, 71, 0.85), rgba(255, 106, 42, 0.75), rgba(43, 127, 255, 0.7)) 1;
+  border-image: linear-gradient(
+      130deg,
+      rgba(255, 212, 71, 0.85),
+      rgba(255, 106, 42, 0.75),
+      rgba(43, 127, 255, 0.7)
+    )
+    1;
 }
 
 .cta-banner::before {
