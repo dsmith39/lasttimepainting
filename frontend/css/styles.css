@@ -1437,6 +1437,39 @@ body[data-page="contact"] .hero-copy .headline-accent {
   color: #bcae9f;
 }
 
+.floating-call-btn {
+  position: fixed;
+  right: 0;
+  top: 55%;
+  transform: translateY(-50%);
+  z-index: 220;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.78rem 1.05rem;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-right: 0;
+  border-radius: 0.9rem 0 0 0.9rem;
+  background: linear-gradient(132deg, var(--paint-red), var(--paint-orange));
+  color: #fff;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  box-shadow: 0 12px 30px rgba(31, 26, 22, 0.25);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base),
+    background var(--transition-base);
+}
+
+.floating-call-btn:hover,
+.floating-call-btn:focus-visible {
+  transform: translate(-4px, -50%);
+  box-shadow: 0 16px 36px rgba(31, 26, 22, 0.34);
+  background: linear-gradient(132deg, #ff5145, #ff6a2a);
+  outline: none;
+}
+
 /* =========================
    Reveal Animations
 ========================= */
@@ -1872,5 +1905,20 @@ body[data-page="contact"] .hero-copy .headline-accent {
   .home-about-feature img {
     height: 260px;
     min-height: 260px;
+  }
+
+  .floating-call-btn {
+    top: auto;
+    bottom: 1rem;
+    right: 0.85rem;
+    transform: none;
+    border-right: 1px solid rgba(255, 255, 255, 0.45);
+    border-radius: var(--radius-pill);
+    padding: 0.75rem 1rem;
+  }
+
+  .floating-call-btn:hover,
+  .floating-call-btn:focus-visible {
+    transform: translateY(-2px);
   }
 }
