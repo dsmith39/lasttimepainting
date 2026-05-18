@@ -23,7 +23,7 @@
       content="https://www.lasttimepainting.com/projects.html"
     />
     <meta name="theme-color" content="#c4622d" />
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/styles.css?v=20260518" />
   </head>
   <body data-page="projects">
     <a class="skip-link" href="#main-content">Skip to content</a>
@@ -128,111 +128,30 @@
 
       <section class="section">
         <div class="container">
-          <div class="gallery-grid reveal">
-            <figure class="gallery-item">
-              <div class="image-card">
-                <img
-                  src="assets/gallery/gallery-lakewood-living-room.svg"
-                  alt="Sample gallery image of a living room repaint in Lakewood"
-                />
-              </div>
-              <figcaption class="gallery-caption">
-                <span class="gallery-meta">Lakewood Interior</span>
-                <h3>Living Room Refresh</h3>
-                <p>
-                  Warm neutral walls, clean cut lines, and bright trim detail.
-                </p>
-              </figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <div class="image-card">
-                <img
-                  src="assets/gallery/gallery-denver-exterior.svg"
-                  alt="Sample gallery image of an exterior repaint in Denver"
-                />
-              </div>
-              <figcaption class="gallery-caption">
-                <span class="gallery-meta">Denver Exterior</span>
-                <h3>Front Exterior Update</h3>
-                <p>
-                  Updated body color, stronger trim contrast, and crisp curb
-                  appeal.
-                </p>
-              </figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <div class="image-card">
-                <img
-                  src="assets/gallery/gallery-cabinet-refresh.svg"
-                  alt="Sample gallery image of cabinet and trim painting"
-                />
-              </div>
-              <figcaption class="gallery-caption">
-                <span class="gallery-meta">Kitchen Detail</span>
-                <h3>Cabinet Refresh</h3>
-                <p>
-                  Refinished cabinets paired with updated wall and trim color.
-                </p>
-              </figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <div class="image-card">
-                <img
-                  src="assets/gallery/gallery-commercial-suite.svg"
-                  alt="Sample gallery image of a commercial suite repaint"
-                />
-              </div>
-              <figcaption class="gallery-caption">
-                <span class="gallery-meta">Commercial</span>
-                <h3>Office Suite Repaint</h3>
-                <p>
-                  Clean walls and trim designed to sharpen the whole workspace.
-                </p>
-              </figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <div class="image-card">
-                <img
-                  src="assets/gallery/gallery-bathroom-finish.svg"
-                  alt="Sample gallery image of a bathroom finish package"
-                />
-              </div>
-              <figcaption class="gallery-caption">
-                <span class="gallery-meta">Bathroom Finish</span>
-                <h3>Fresh Fixture Surround</h3>
-                <p>
-                  Moisture-friendly coatings with a brighter, cleaner finish.
-                </p>
-              </figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <div class="image-card">
-                <img
-                  src="assets/gallery/gallery-entryway-trim.svg"
-                  alt="Sample gallery image of trim and entryway paint work"
-                />
-              </div>
-              <figcaption class="gallery-caption">
-                <span class="gallery-meta">Trim Work</span>
-                <h3>Entryway and Trim Detail</h3>
-                <p>
-                  Sharper lines and brighter surfaces that frame the whole room.
-                </p>
-              </figcaption>
-            </figure>
+          <div class="gallery-toolbar" data-gallery-toolbar>
+            <div class="filters" data-gallery-filters aria-label="Project filters"></div>
+            <p class="gallery-stats" data-gallery-stats></p>
+          </div>
+
+          <div class="gallery-grid" data-project-gallery>
+            <noscript>
+              <p>
+                Enable JavaScript to view the full project gallery with all
+                uploaded images and project filters.
+              </p>
+            </noscript>
           </div>
         </div>
       </section>
 
       <section class="section-tight">
         <div class="container card reveal">
-          <span class="eyebrow">Gallery Note</span>
-          <h2>Sample Images Are in Place for Easy Swapping</h2>
+          <span class="eyebrow">Project Highlights</span>
+          <h2>Real Projects, Organized by Scope</h2>
           <p>
-            These sample gallery images can be replaced one-for-one as the owner
-            sends over finished project photos. Update the files in the assets
-            folder or change the image references here to publish the real
-            gallery.
+            This full gallery includes every uploaded image from your cabinet,
+            corner accent, door refinish, exterior repaint, floating shelf, and
+            JoJo remodel folders. Use the filters above to review each project.
           </p>
         </div>
       </section>
@@ -300,6 +219,7 @@
       </div>
     </footer>
 
-    <script src="js/main.js" defer></script>
+    <script src="js/projects-gallery-data.js?v=20260518" defer></script>
+    <script src="js/main.js?v=20260518" defer></script>
   </body>
 </html>
