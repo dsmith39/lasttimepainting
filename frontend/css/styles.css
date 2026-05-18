@@ -66,6 +66,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 body {
@@ -1909,7 +1910,7 @@ body[data-page="contact"] .hero-copy .headline-accent {
 
   .floating-call-btn {
     top: auto;
-    bottom: 1rem;
+    bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
     right: 0.85rem;
     transform: none;
     border-right: 1px solid rgba(255, 255, 255, 0.45);
