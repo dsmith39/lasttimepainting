@@ -83,7 +83,8 @@
     const statsEl = document.querySelector("[data-gallery-stats]");
     const allImages = window.PROJECT_GALLERY_IMAGES;
 
-    if (!galleryEl || !filtersEl || !statsEl || !Array.isArray(allImages)) return;
+    if (!galleryEl || !filtersEl || !statsEl || !Array.isArray(allImages))
+      return;
 
     const projects = [
       {
@@ -107,7 +108,10 @@
       {
         id: "doors",
         label: "Door Refinish",
-        keys: ["/LTP-exterior%20interior%20door-3-001/", "/LTP-exterior interior door-3-001/"],
+        keys: [
+          "/LTP-exterior%20interior%20door-3-001/",
+          "/LTP-exterior interior door-3-001/",
+        ],
         meta: "Door Refinish",
         title: "Entry Door Restoration",
         description:
@@ -223,7 +227,8 @@
 
       galleryEl.innerHTML = "";
       visibleItems.forEach(function (item) {
-        seenByProject[item.project.id] = (seenByProject[item.project.id] || 0) + 1;
+        seenByProject[item.project.id] =
+          (seenByProject[item.project.id] || 0) + 1;
         const photoNumber = seenByProject[item.project.id];
         const projectTotal = counts[item.project.id];
 
