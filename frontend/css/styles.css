@@ -66,7 +66,6 @@
 
 html {
   scroll-behavior: smooth;
-  overflow-x: clip;
 }
 
 body {
@@ -560,6 +559,8 @@ select {
 .hero {
   position: relative;
   isolation: isolate;
+  overflow-x: hidden;
+  overflow-x: clip;
   padding: calc(var(--space-8) + 0.5rem) 0 var(--space-8);
 }
 
