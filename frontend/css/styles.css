@@ -739,6 +739,10 @@ body[data-page="contact"] .hero > .container::after {
   align-items: center;
 }
 
+.hero-grid > * {
+  min-width: 0;
+}
+
 .hero-copy p {
   margin-top: var(--space-4);
   max-width: 62ch;
@@ -1177,12 +1181,17 @@ body[data-page="contact"] .hero-copy .headline-accent {
 
 .gallery-meta {
   display: inline-block;
-  margin-bottom: var(--space-2);
+  margin-bottom: 0.4rem;
+  padding: 0.16rem 0.5rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(240, 90, 40, 0.45);
+  background: linear-gradient(90deg, #fff5e7, #ffe6d6);
   color: var(--color-accent-dark);
-  font-size: 0.9rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
+  transform: translateY(-0.22rem);
 }
 
 .gallery-placeholder-item {
