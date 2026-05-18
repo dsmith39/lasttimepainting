@@ -79,6 +79,11 @@
 
   function setupProjectGallery() {
     const galleryEl = document.querySelector("[data-project-gallery]");
+    const toolbarEl = document.querySelector("[data-gallery-toolbar]");
+    const toolbarToggleEl = document.querySelector("[data-gallery-toggle]");
+    const toolbarContentEl = document.querySelector(
+      "[data-gallery-toolbar-content]",
+    );
     const filtersEl = document.querySelector("[data-gallery-filters]");
     const statsEl = document.querySelector("[data-gallery-stats]");
     const allImages = window.PROJECT_GALLERY_IMAGES;
@@ -406,14 +411,54 @@
       });
     }
 
+    function scrollToGalleryTop() {
+      const headerOffset = header ? header.offsetHeight + 12 : 12;
+      const galleryTop =
+        window.scrollY + galleryEl.getBoundingClientRect().top - headerOffset;
+
+      window.scrollTo({
+        top: Math.max(0, galleryTop),
+        behavior: "smooth",
+      });
+    }
+
     renderFilters();
     renderLightboxFilters();
+
+    if (toolbarEl && toolbarToggleEl && toolbarContentEl) {
+      const compactToolbarQuery = window.matchMedia("(max-width: 1024px)");
+      let toolbarUserToggled = false;
+
+      function setToolbarCollapsed(isCollapsed) {
+        toolbarEl.classList.toggle("is-collapsed", isCollapsed);
+        toolbarToggleEl.setAttribute("aria-expanded", String(!isCollapsed));
+      }
+
+      function applyDefaultToolbarState() {
+        if (toolbarUserToggled) return;
+        setToolbarCollapsed(compactToolbarQuery.matches);
+      }
+
+      applyDefaultToolbarState();
+
+      if (typeof compactToolbarQuery.addEventListener === "function") {
+        compactToolbarQuery.addEventListener("change", applyDefaultToolbarState);
+      } else if (typeof compactToolbarQuery.addListener === "function") {
+        compactToolbarQuery.addListener(applyDefaultToolbarState);
+      }
+
+      toolbarToggleEl.addEventListener("click", function () {
+        toolbarUserToggled = true;
+        setToolbarCollapsed(!toolbarEl.classList.contains("is-collapsed"));
+      });
+    }
 
     filtersEl.addEventListener("click", function (event) {
       const chip = event.target.closest(".filter-chip");
       if (!chip) return;
       activeFilter = chip.getAttribute("data-filter") || "all";
       renderGallery();
+      scrollToGalleryTop();
     });
 
     lbFiltersEl.addEventListener("click", function (event) {

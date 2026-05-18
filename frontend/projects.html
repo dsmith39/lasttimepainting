@@ -128,22 +128,42 @@
 
       <section class="section">
         <div class="container">
-          <div class="gallery-toolbar" data-gallery-toolbar>
-            <div
-              class="filters"
-              data-gallery-filters
-              aria-label="Project filters"
-            ></div>
-            <p class="gallery-stats" data-gallery-stats></p>
-          </div>
+          <div class="projects-layout">
+            <aside class="gallery-toolbar" data-gallery-toolbar>
+              <button
+                class="gallery-toolbar-toggle"
+                type="button"
+                data-gallery-toggle
+                aria-expanded="true"
+                aria-controls="project-filter-panel"
+              >
+                <span class="gallery-toolbar-label">Project Categories</span>
+                <span class="gallery-toolbar-toggle-icon" aria-hidden="true"
+                  >+</span
+                >
+              </button>
+              <div
+                class="gallery-toolbar-content"
+                id="project-filter-panel"
+                data-gallery-toolbar-content
+              >
+                <div
+                  class="filters"
+                  data-gallery-filters
+                  aria-label="Project filters"
+                ></div>
+                <p class="gallery-stats" data-gallery-stats></p>
+              </div>
+            </aside>
 
-          <div class="gallery-grid" data-project-gallery>
-            <noscript>
-              <p>
-                Enable JavaScript to view the full project gallery with all
-                uploaded images and project filters.
-              </p>
-            </noscript>
+            <div class="gallery-grid" data-project-gallery>
+              <noscript>
+                <p>
+                  Enable JavaScript to view the full project gallery with all
+                  uploaded images and project filters.
+                </p>
+              </noscript>
+            </div>
           </div>
         </div>
       </section>
@@ -203,7 +223,6 @@
           <h4>Hours</h4>
           <ul>
             <li>Mon-Fri: 7:00 AM - 6:00 PM</li>
-            <li>Sat: 8:00 AM - 2:00 PM</li>
             <li>Sun: By appointment</li>
           </ul>
         </section>
