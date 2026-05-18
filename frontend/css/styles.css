@@ -36,8 +36,8 @@
   --space-8: 4rem;
 
   --radius-sm: 0.5rem;
-  --radius-md: 0.85rem;
-  --radius-lg: 1.25rem;
+  --radius-md: 0;
+  --radius-lg: 0;
   --radius-pill: 999px;
 
   --shadow-sm: 0 10px 30px rgba(37, 22, 28, 0.12);
@@ -346,7 +346,7 @@ select {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.35rem 0.45rem;
+  padding: 0.5rem 0.9rem;
   border-radius: var(--radius-pill);
   font-weight: 600;
   line-height: 1.1;
@@ -366,8 +366,8 @@ select {
 .nav-link::after {
   content: "";
   position: absolute;
-  left: 0.45rem;
-  right: 0.45rem;
+  left: 0.7rem;
+  right: 0.7rem;
   bottom: 0.08rem;
   height: 2px;
   border-radius: 2px;
@@ -461,6 +461,10 @@ select {
   flex-direction: column;
   align-items: flex-start;
   gap: var(--space-3);
+}
+
+.mobile-nav .nav-link {
+  padding: 0.65rem 1rem;
 }
 
 /* =========================
@@ -851,7 +855,7 @@ body[data-page="contact"] .hero-copy .headline-accent {
   height: 42px;
   display: grid;
   place-items: center;
-  border-radius: 10px;
+  border-radius: 0;
   background: linear-gradient(145deg, #ffe0c8, #ffd5d8);
   color: #8f241c;
   font-weight: 800;
@@ -1042,7 +1046,7 @@ body[data-page="contact"] .hero-copy .headline-accent {
 .field select {
   width: 100%;
   border: 1px solid var(--color-border);
-  border-radius: 0.6rem;
+  border-radius: 0;
   padding: 0.68rem 0.82rem;
   background: #fff;
   color: #241d18;
