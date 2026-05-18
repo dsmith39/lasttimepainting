@@ -162,14 +162,14 @@
     const items = allImages
       .map(function (imageData) {
         // Handle both old string format and new object format
-        const src = typeof imageData === 'string' ? imageData : imageData.src;
+        const src = typeof imageData === "string" ? imageData : imageData.src;
         const project = findProject(src);
         if (!project) return null;
-        return { 
-          src: src, 
+        return {
+          src: src,
           project: project,
-          alt: imageData.alt || (project.label + ' project photo'),
-          description: imageData.description || project.description
+          alt: imageData.alt || project.label + " project photo",
+          description: imageData.description || project.description,
         };
       })
       .filter(Boolean)
